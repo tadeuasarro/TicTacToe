@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+# Welcome screen for the game
 p 'Hello World From Brazil and Colombia'
 puts '****************************************************************'
 puts '*                    TIC TAC TOE THE GAME                      *'
@@ -21,6 +22,7 @@ loop do
   break unless init != 'y' && init != 'n'
 end
 
+# Gets the information on the participants
 puts "\n\n Lets get to know our participants!!!!!!\n\n"
 player1 = ''
 player2 = ''
@@ -40,15 +42,16 @@ loop do
   break unless init != 'y'
 end
 
-players = [player1, player2]
-tokens = %w[X O]
-turn = 0
+players = [player1, player2] # Groups the players into one array for easy access
+tokens = %w[X O] # Keeps the tokens for each player
+turn = 0 # Turn = 0 is player1's turn and turn = 1 is player2's turn
 
 puts "\n\n Lets begin our TIC TAC TOE GAME!!!!!!\n\n"
 
-board = Array(1..9)
-end_game = false
+board = Array(1..9) # Sets the board
+end_game = false # Ensures the game is not going to end immediatly
 loop do
+  # Prints the board
   print "\n\nIt's #{players[turn]} turn, THINK YOUR MOVE!!!!!!!\n"
   print "\n\t---------------\n\t"
   board.each_with_index do |item, i|
@@ -57,9 +60,14 @@ loop do
   end
   print "\n"
 
+  # Section to check if the next move could be a winning move for the player
+  #   If the move is a winning move it shows a message
+  # End of the winning move section
+
+  # Asks the player for the move he wants to make
   print " #{players[turn]} Enter the position which you want to place your #{tokens[turn]}: "
   move = gets.chomp.to_i
-
+  # Section to check if the move is available
   if move > 9 || move < 1
     puts 'Out of range select another position'
     next
@@ -68,9 +76,15 @@ loop do
     next
   end
 
+  # If the move is available puts it in the board
   board[move - 1] = tokens[turn]
-  turn = turn.zero? ? 1 : 0
-  board.all?(String) ? end_game = true : nil
+
+  # Section for checking the end of the game
+  # Check if the current player won
+  board.all?(String) ? end_game = true : nil # If it is a draw it finishes the game
+  # End of the end of the game checking section
+
+  turn = turn.zero? ? 1 : 0 # Switches the turn to the next player
   puts move
   break if end_game
 end
