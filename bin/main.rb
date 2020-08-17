@@ -12,7 +12,7 @@ class Game
   end
 
   def round
-    
+
   end
 
   def start_game
@@ -23,6 +23,11 @@ class Game
 end
 
 class Player
+  attr_reader :name,:token
+  def intialize(name,token)
+    @name = name
+    @token = token
+  end
 end
 
 class Board < Array
