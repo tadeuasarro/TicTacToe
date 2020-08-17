@@ -35,7 +35,7 @@ loop do
   loop do
     print 'Is this information OK?[y/n]: '
     init = gets.chomp
-    break if init == 'y' || init == 'n'
+    break if %w[y n].include?(init)
   end
   break unless init != 'y'
 end
@@ -61,10 +61,10 @@ loop do
   move = gets.chomp.to_i
 
   if move > 9 || move < 1
-    puts "Out of range select another position"
+    puts 'Out of range select another position'
     next
-  elsif board[move-1].is_a? String
-    puts "Position taken!!!! Select another one"
+  elsif board[move - 1].is_a? String
+    puts 'Position taken!!!! Select another one'
     next
   end
 
