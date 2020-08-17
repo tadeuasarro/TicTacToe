@@ -14,12 +14,13 @@ class Game
   def round
       @board.display_board
       @turn += 1
-      print "#{@player1.name}: " if @turn.odd?
-      print "#{@player2.name}: " if @turn.even?
+      print "#{@player1.name} (#{@player1.token}): " if @turn.odd?
+      print "#{@player2.name} (#{@player2.token}): " if @turn.even?
       puts "Which position to take?"
-      input = gets.chomp
-      if @board.include?(input.to_i)
-        #put some victory check method here
+      input = gets.chomp.to_i
+      if @board.include?(input)
+        @board[input - 1] = "#{@player1.token}" if @turn.odd?
+        @board[input - 1] = "#{@player2.token}" if @turn.even?
       else
         @turn -= 1
         puts "Invalid play! Try again!"
@@ -29,8 +30,13 @@ class Game
   def start_game
     while @turn < 9
       round
+      #put some victory check method here
     end
   end
+
+  def check_victory
+  end
+
 end
 
 class Player
