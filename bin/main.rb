@@ -8,31 +8,51 @@ class Game
     self.board = Array(1..9)
   end
 
-  def track_turns
+  def change_turns
     self.turn.zero? ? self.turn=1 : self.turn=0
   end
 
-  def check_victory_conditions
+  def check_position(pos)
+    return false if pos > 9 || pos < 1
+    return false if self.board[pos-1].is_a? String
+    true
   end
 
-  def check_position_availability
+  def to_play(player,pos)
+    self.board[pos-1] = player.token
   end
+
+  def check_victory
+    
+  end
+
+  # def board_display
+  #   print "\n\t---------------\n\t"
+  #   self.board.each_with_index do |item, i|
+  #     print "| #{item} |"
+  #     print "\n\t---------------\n\t" if ((i + 1) % 3).zero?
+  #   end
+  # print "\n"
+  # end
 
 end
 
 class Player < Game
   attr_accessor :name, :token
-
-  def to_play
-  end
-
 end
 
-class Display < Game
-  def board_display
+class Display
+  def board_display(board)
+    print "\n\t---------------\n\t"
+    board.each_with_index do |item, i|
+      print "| #{item} |"
+      print "\n\t---------------\n\t" if ((i + 1) % 3).zero?
+    end
+  print "\n"
   end
 
-  def message_display
+  def message_display(msg)
+    p msg
   end
 
   def positive_negative_question
@@ -40,6 +60,8 @@ class Display < Game
 
 end
 
+
+=begin
 p 'Hello World From Brazil and Colombia'
 puts '****************************************************************'
 puts '*                    TIC TAC TOE THE GAME                      *'
@@ -60,7 +82,7 @@ loop do
   end
   break unless init != 'y' && init != 'n'
 end
-
+=end
 puts "\n\n Lets get to know our participants!!!!!!\n\n"
 player1 = Player.new
 player2 = Player.new
@@ -82,30 +104,33 @@ loop do
   break unless init != 'y'
 end
 
+game= Game.new
 players = [player1, player2]
-tokens = %w[X O]
-turn = 0
+disp= Display.new
+disp.message_display("This is The Board")
 
 puts "\n\n Lets begin our TIC TAC TOE GAME!!!!!!\n\n"
+=begin
+=end
 
-board = Array(1..9)
 end_game = false
+
 loop do
-  print "\n\nIt's #{players[turn].name} turn, THINK YOUR MOVE!!!!!!!\n"
-  print "\n\t---------------\n\t"
-  board.each_with_index do |item, i|
-    print "| #{item} |"
-    print "\n\t---------------\n\t" if ((i + 1) % 3).zero?
-  end
-  print "\n"
-
-  print " #{players[turn].name} Enter the position which you want to place your #{tokens[turn]}: "
+  disp.message_display("It's #{players[game.turn].name} turn, THINK YOUR MOVE!!!!!!!\n") 
+  disp.board_display(game.board)
+  disp.message_display(" #{players[game.turn].name} Enter the position which you want to place your #{players[game.turn].token}: ") 
   move = gets.chomp.to_i
-  next if move.zero? || move > 9 || move < 1
+  
+  if game.check_position(move)
+    game.to_play(players[game.turn],move)
+  else
+    next
+  end
+  game.change_turns
+=begin
 
-  board[move - 1] = tokens[turn]
-  turn.zero? ? turn=1 : turn=0
   board.all?(String) ? end_game = true : nil
   puts move
   break unless end_game != true
+=end
 end
