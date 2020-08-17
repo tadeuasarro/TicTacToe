@@ -1,45 +1,5 @@
 #!/usr/bin/env ruby
 
-class Game
-  attr_accessor :turn, :board
-
-  def initialize
-    self.turn  = 0
-    self.board = Array(1..9)
-  end
-
-  def track_turns
-    self.turn.zero? ? self.turn=1 : self.turn=0
-  end
-
-  def check_victory_conditions
-  end
-
-  def check_position_availability
-  end
-
-end
-
-class Player < Game
-  attr_accessor :name, :token
-
-  def to_play
-  end
-
-end
-
-class Display < Game
-  def board_display
-  end
-
-  def message_display
-  end
-
-  def positive_negative_question
-  end
-
-end
-
 p 'Hello World From Brazil and Colombia'
 puts '****************************************************************'
 puts '*                    TIC TAC TOE THE GAME                      *'
