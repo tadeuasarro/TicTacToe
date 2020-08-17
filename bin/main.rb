@@ -72,5 +72,5 @@ loop do
   turn = turn.zero? ? 1 : 0
   board.all?(String) ? end_game = true : nil
   puts move
-  break unless end_game != true
+  break if end_game
 end
