@@ -38,3 +38,31 @@ loop do
   end
   break unless init != 'y'
 end
+
+players = [player1, player2]
+tokens = %w[X O]
+turn = 0
+
+puts "\n\n Lets begin our TIC TAC TOE GAME!!!!!!\n\n"
+
+board = Array(1..9)
+end_game = false
+loop do
+  print "\n\nIt's #{players[turn]} turn, THINK YOUR MOVE!!!!!!!\n"
+  print "\n\t---------------\n\t"
+  board.each_with_index do |item, i|
+    print "| #{item} |"
+    print "\n\t---------------\n\t" if ((i + 1) % 3).zero?
+  end
+  print "\n"
+
+  print " #{player1} Enter the position which you want to place your #{tokens[turn]}: "
+  move = gets.chomp.to_i
+  next if move.zero? || move > 9 || move < 1
+
+  board[move - 1] = tokens[turn]
+  turn.zero? ? turn=1 : turn=0
+  board.all?(String) ? end_game = true : nil
+  puts move
+  break unless end_game != true
+end
