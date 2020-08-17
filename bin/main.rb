@@ -22,22 +22,20 @@ loop do
 end
 
 puts "\n\n Lets get to know our participants!!!!!!\n\n"
-player1 = Player.new
-player2 = Player.new
-init=''
+player1 = ''
+player2 = ''
+init = ''
 loop do
   print 'Enter the name of player #1: '
-  player1.name = gets.chomp
-  player1.token = 'X'
+  player1 = gets.chomp
   print 'Enter the name of player #2: '
-  player2.name = gets.chomp
-  player2.token = 'O'
-  puts "\n Welcome #{player1.name} your token will be X\n"
-  puts "\n Welcome #{player2.name} your token will be O\n\n"
+  player2 = gets.chomp
+  puts "\n Welcome #{player1} your token will be X\n"
+  puts "\n Welcome #{player2} your token will be O\n\n"
   loop do
     print 'Is this information OK?[y/n]: '
     init = gets.chomp
-    break if init=='y' || init=='n'
+    break if init == 'y' || init == 'n'
   end
   break unless init != 'y'
 end
@@ -51,7 +49,7 @@ puts "\n\n Lets begin our TIC TAC TOE GAME!!!!!!\n\n"
 board = Array(1..9)
 end_game = false
 loop do
-  print "\n\nIt's #{players[turn].name} turn, THINK YOUR MOVE!!!!!!!\n"
+  print "\n\nIt's #{players[turn]} turn, THINK YOUR MOVE!!!!!!!\n"
   print "\n\t---------------\n\t"
   board.each_with_index do |item, i|
     print "| #{item} |"
@@ -59,12 +57,12 @@ loop do
   end
   print "\n"
 
-  print " #{players[turn].name} Enter the position which you want to place your #{tokens[turn]}: "
+  print " #{players[turn]} Enter the position which you want to place your #{tokens[turn]}: "
   move = gets.chomp.to_i
   next if move.zero? || move > 9 || move < 1
 
   board[move - 1] = tokens[turn]
-  turn.zero? ? turn=1 : turn=0
+  turn = turn.zero? ? 1 : 0
   board.all?(String) ? end_game = true : nil
   puts move
   break unless end_game != true
