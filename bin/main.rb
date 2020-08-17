@@ -59,7 +59,14 @@ loop do
 
   print " #{players[turn]} Enter the position which you want to place your #{tokens[turn]}: "
   move = gets.chomp.to_i
-  next if move.zero? || move > 9 || move < 1
+
+  if move > 9 || move < 1
+    puts "Out of range select another position"
+    next
+  elsif board[move-1].is_a? String
+    puts "Position taken!!!! Select another one"
+    next
+  end
 
   board[move - 1] = tokens[turn]
   turn = turn.zero? ? 1 : 0
