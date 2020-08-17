@@ -85,6 +85,5 @@ loop do
   # End of the end of the game checking section
 
   turn = turn.zero? ? 1 : 0 # Switches the turn to the next player
-  puts move
   break if end_game
 end
