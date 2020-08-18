@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# rubocop:disable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity,Metrics/ModuleLength
+# rubocop:disable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
 
 class Game
   attr_accessor :turn, :board
@@ -51,8 +51,8 @@ class Game
   def check_victory(token)
     counters = [0, 0, 0, 0] # [cols,rows,diag1,diag2]
     (0..2).each do |i|
-      counters[0]=[board[(i)],board[(i) + 3],board[(i) + 6]].count(token) # Checks the positions for the columns
-      counters[1]=[board[i*3],board[(i * 3) + 1],board[(i * 3) + 2]].count(token)  # Checks the positions for the rows
+      counters[0] = [board[i], board[i + 3], board[i + 6]].count(token) # Checks the positions for the columns
+      counters[1] = [board[i * 3], board[(i * 3) + 1], board[(i * 3) + 2]].count(token) # Checks the positions for the rows
       counters[2] += 1 if board[i * 4] == token # Counts if a position in the main diagonal
       counters[3] += 1 if board[(i * 2) + 2] == token # Counts if a position in the oposite diagonal
       return true if counters.include? 3
@@ -100,7 +100,7 @@ class Board < Array
   end
 end
 
-# rubocop:enable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity,Metrics/ModuleLength
+# rubocop:enable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
 
 new_board = Board[1, 2, 3, 4, 5, 6, 7, 8, 9]
 
