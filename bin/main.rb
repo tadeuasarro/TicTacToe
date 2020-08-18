@@ -34,7 +34,17 @@ class Game
     end
   end
 
-  def check_victory
+  def check_victory(token)
+    counters = [0,0,0,0] # [cols,rows,diag1,diag2]
+    (0..2).each do |i|
+      counters[0]=[board[(i)],board[(i)+3],board[(i)+6]].count(token) # Checks the positions for the columns
+      counters[1]=[board[i*3],board[(i*3)+1],board[(i*3)+2]].count(token)  # Checks the positions for the rows
+      counters[2] += 1 if board[i*4] == token # Counts if a position in the main diagonal
+      counters[3] += 1 if board[(i*2)+2] == token # Counts if a position in the oposite diagonal
+      return true if counters.include? (3)
+
+    end
+    false
   end
 
 end
