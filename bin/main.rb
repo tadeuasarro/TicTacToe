@@ -47,6 +47,27 @@ class Game
     false
   end
 
+  def check_win_move(token)
+    diag1 = []
+    diag2 = []
+
+    (0..2).each do |i|
+      col = [board[i], board[i + 3], board[i + 6]] # Gets the whole column
+      row = [board[i * 3], board[(i * 3) + 1], board[(i * 3) + 2]] # Gets the whole row
+      diag1.push(board[i * 4]) # Starts constructing the main diagonal
+      diag2.push(board[(i * 2) + 2]) # Starts constructing the oposite diagonal
+      return true if col.count(token) == 2 && col.any?(Numeric) # If it has a number in it and two tokens is a winning move
+
+      return true if row.count(token) == 2 && row.any?(Numeric) # If it has a number in it and two tokens is a winning move
+
+    end
+    return true if diag1.count(token) == 2 && diag1.any?(Numeric) # Checks the main diagonal for the winning move
+
+    return true if diag2.count(token) == 2 && diag2.any?(Numeric) # Checks the oposite diagonal for the winning move
+
+    false
+  end
+
 end
 
 class Player
