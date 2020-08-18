@@ -14,7 +14,9 @@ class Game
   def round
       @board.display_board
       @turn += 1
-      # Put some winning move logic here
+      win_pos = check_win_move(@player1.token) if @turn.odd?
+      win_pos = check_win_move(@player2.token) if @turn.even?
+      puts "YOU CAN WIN THIS!!!!!" if win_pos
       print "#{@player1.name} (#{@player1.token}): " if @turn.odd?
       print "#{@player2.name} (#{@player2.token}): " if @turn.even?
       puts "Which position to take?"
@@ -31,11 +33,11 @@ class Game
   def start_game
     while @turn < 9
       round
-      #put some victory check method here
       win = check_victory(@player1.token) if @turn.odd?
       win = check_victory(@player2.token) if @turn.even?
       finish_game if win
     end
+    puts "NOBODY WON IT IS A DRAW"
   end
 
   def finish_game
