@@ -1,9 +1,11 @@
 #!/usr/bin/env ruby
+# rubocop:disable Metrics/BlockLength
+
 require_relative '../lib/game'
 require_relative '../lib/board'
 require_relative '../lib/player.rb'
 
-while true
+loop do
   new_board = Board.new
 
   puts 'First player? '
@@ -29,7 +31,7 @@ while true
     input = gets.chomp.to_i
 
     # Checks if the position is valid
-    pos_valid=new_game.check_position(input, new_board.board)
+    pos_valid = new_game.check_position(input, new_board.board)
     if pos_valid
       new_board.take_position(input, first_player.token) if new_game.turn.odd?
       new_board.take_position(input, second_player.token) if new_game.turn.even?
@@ -38,23 +40,25 @@ while true
       puts 'Invalid play! Try again!'
     end
 
-    #Victory check
+    # Victory check
     win = new_game.check_victory(first_player.token, new_board.board) if new_game.turn.odd?
     win = new_game.check_victory(second_player.token, new_board.board) if new_game.turn.even?
 
-    if win
+    if new_game.turn.odd? && win
       new_board.display_board
-      puts "#{first_player.name} WINS THE GAME!!!!!!! CONGRATULATIONS" if new_game.turn.odd?
-      puts "#{second_player.name} WINS THE GAME!!!!!!! CONGRATULATIONS" if new_game.turn.even?
+      puts "#{first_player.name} WINS THE GAME!!!!!!! CONGRATULATIONS"
+      break
+    elsif new_game.turn.even? && win
+      new_board.display_board
+      puts "#{second_player.name} WINS THE GAME!!!!!!! CONGRATULATIONS"
       break
     end
-    #finish_game if win
     puts 'NOBODY WON IT IS A DRAW' if new_game.turn == 9
   end
- 
+
   print "\nDo you want to play again? [y/n]: "
   input = gets.chomp.downcase
 
   break if input == 'n'
-
 end
+# rubocop:enable Metrics/BlockLength

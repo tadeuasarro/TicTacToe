@@ -30,8 +30,7 @@ class Game
   end
 
   def check_position(pos, board)
-    board.include?(pos) ? ans = true : ans = false
-    ans
+    board.include?(pos) ? true : false
   end
 
   def check_victory(token, board)

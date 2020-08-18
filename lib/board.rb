@@ -6,7 +6,7 @@ class Board < Array
   end
 
   def take_position(pos, token)
-    @board[pos-1] = token
+    @board[pos - 1] = token
   end
 
   def display_board
