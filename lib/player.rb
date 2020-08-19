@@ -4,4 +4,5 @@ class Player
     @name = name
     @token = token
   end
+
 end

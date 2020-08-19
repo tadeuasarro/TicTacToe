@@ -10,25 +10,6 @@ class Game
     @turn = 0
   end
 
-  def round
-    @board.display_board
-    @turn += 1
-    win_pos = check_win_move(@player1.token) if @turn.odd?
-    win_pos = check_win_move(@player2.token) if @turn.even?
-    puts 'YOU CAN WIN THIS!!!!!' if win_pos
-    print "#{@player1.name} (#{@player1.token}): " if @turn.odd?
-    print "#{@player2.name} (#{@player2.token}): " if @turn.even?
-    puts 'Which position to take?'
-    input = gets.chomp.to_i
-    if @board.include?(input)
-      @board[input - 1] = @player1.token if @turn.odd?
-      @board[input - 1] = @player2.token if @turn.even?
-    else
-      @turn -= 1
-      puts 'Invalid play! Try again!'
-    end
-  end
-
   def check_position(pos, board)
     board.include?(pos) ? true : false
   end
