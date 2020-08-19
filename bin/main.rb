@@ -18,7 +18,7 @@ loop do
   new_board = Board.new
 
   key = false
-  while key == false do
+  while key == false
     puts 'First player? '
     first_player = Player.new(gets.chomp.capitalize, 'X')
     puts 'Second player? '

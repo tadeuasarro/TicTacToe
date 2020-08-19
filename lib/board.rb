@@ -8,5 +8,4 @@ class Board < Array
   def take_position(pos, token)
     @board[pos - 1] = token
   end
-
 end
