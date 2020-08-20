@@ -10,7 +10,6 @@
 
 
 ## Rules for the Tic Tac Toe Game
-
 ![](./img/Tic-tac-toe-animated.gif)
 
 - The game is played on a grid that's 3 squares by 3 squares.
@@ -75,7 +74,7 @@ After you win  the game will congratulate you and ask you if you want to start a
 
 ![screenshot](./img/wins.png)
 
-If nobody wins the game will let you know and ask you if you want to play again
+If nobody wins the game will let you know and ask you if you want to start a new game
 
 ![screenshot](./img/draw.png)
 
