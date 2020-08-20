@@ -4,7 +4,7 @@
 
 > The purpose of this project is to setup the Tic Tac Toe game, for two players, using Ruby.
 
-- This is the Milestone #2, to add a dinamic display for the users to use.
+- This is the Milestone #3, to add a logic for the game and make it playable.
 
 ## Built With
 
