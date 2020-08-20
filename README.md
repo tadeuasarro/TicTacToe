@@ -46,3 +46,35 @@ After doing this you can run it by simply typing in the console ./main.rb
 
 ### Install
 In order to run, you need to install RUBY in your computer. For windows you can go to [Ruby installer](https://rubyinstaller.org/) and for MAC and LINUX you can go to [Ruby official site](https://www.ruby-lang.org/en/downloads/) for intructions on how to intall it.
+
+
+### Usage
+The first thing you are asked for is the player names, when the prompt shows you can enter your name. 
+
+![screenshot](./img/player_names.png)
+
+The board has numbers inside indicating the positions you can take.
+
+![screenshot](./img/board.png)
+
+After the board is displayed the first player has to choose a position
+
+![screenshot](./img/position_p1.png)
+
+Then the second player is asked for his position
+
+![screenshot](./img/position_p2.png)
+
+And it goes back and forth until the game ends.
+
+If the player has the chance to win then the game will tell before you place your move
+
+![screenshot](./img/winning_move.png)
+
+After you win  the game will congratulate you and ask you if you want to start a new game
+
+![screenshot](./img/wins.png)
+
+If nobody wins the game will let you know and ask you if you want to play again
+
+![screenshot](./img/draw.png)
