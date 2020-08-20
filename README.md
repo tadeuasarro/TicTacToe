@@ -34,3 +34,15 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 You need to have Ruby installed in your machine
+
+
+### Setup
+You can make the main file executable in linux by changing the permissions with the following command:
+
+- chmod 755 main.rb
+
+After doing this you can run it by simply typing in the console ./main.rb
+
+
+### Install
+In order to run, you need to install RUBY in your computer. For windows you can go to [Ruby installer](https://rubyinstaller.org/) and for MAC and LINUX you can go to [Ruby official site](https://www.ruby-lang.org/en/downloads/) for intructions on how to intall it.
