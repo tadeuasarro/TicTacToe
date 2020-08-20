@@ -21,3 +21,16 @@
 
 - When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
 
+
+## Built With
+
+- Ruby,
+
+
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+
+### Prerequisites
+You need to have Ruby installed in your machine
