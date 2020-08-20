@@ -34,11 +34,9 @@ You need to have Ruby installed in your machine
 
 
 ### Setup
-You can make the main file executable in linux by changing the permissions with the following command:
+To run it can be done by simply typing in the console ./bin/main.rb
 
-- chmod 755 main.rb
-
-After doing this you can run it by simply typing in the console ./main.rb
+You can also run the [live console](https://a5c5ccac-ed57-4fcb-ae09-c1198840be49.ws-us02.gitpod.io/#/workspace/TicTacToe) and then run it with the same command above.
 
 
 ### Install
