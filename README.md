@@ -1,46 +1,10 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Tic Tac Toe User Interface
+# Tic Tac Toe The Game
 
 > The purpose of this project is to setup the Tic Tac Toe game, for two players, using Ruby.
 
-- This is the Milestone #3, to add a logic for the game and make it playable.
+![screenshot](./img/tic-tac-toe.png)
 
-## Built With
+ TIC TAC TOE is game for two players represented by a X for one player and a O for the other one. Each player take turns marking the spaces in a 3×3 grid. The main goal is to place three of their marks in a horizontal, vertical, or diagonal row, the one to do this first is the winner. For additional information go to [TicTacToeWiki](https://en.wikipedia.org/wiki/Tic-tac-toe)
 
-- Ruby
-
-To get a local copy up and running follow these simple example steps.
-
-## Authors
-
-👤 **Mateo Mojica**
-
-- Github: [@mateomh](https://github.com/mateomh)
-- Twitter: [@mateo_m_h](https://twitter.com/mateo_m_h)
-- Linkedin: [Mateo Mojica](https://linkedin.com/mateo_mojica_hernandez)
-
-👤 **Tadeu Sarro**
-
-- Github: [@tadeuasarro](https://github.com/tadeuasarro)
-- Twitter: [@tadeuasarro](https://twitter.com/tadeuasarro)
-- Linkedin: [Tadeu Sarro](https://www.linkedin.com/in/tadeuasarro/)
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!
-
-Feel free to check the [issues page](issues/).
-
-## Show your support
-
-Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Microverse
-- The Odin Project;
-
-## 📝 License
-
-This project is [MIT](lic.url) licensed.
