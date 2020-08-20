@@ -78,3 +78,35 @@ After you win  the game will congratulate you and ask you if you want to start a
 If nobody wins the game will let you know and ask you if you want to play again
 
 ![screenshot](./img/draw.png)
+
+
+## Authors
+👤 **Mateo Mojica**
+- Github: [@mateomh](https://github.com/mateomh)
+- Twitter: [@mateo_m_h](https://twitter.com/mateo_m_h)
+- Linkedin: [Mateo Mojica](https://linkedin.com/mateo_mojica_hernandez)
+
+
+👤 **Tadeu Sarro**
+- Github: [@tadeuasarro](https://github.com/tadeuasarro)
+- Twitter: [@tadeuasarro](https://twitter.com/tadeuasarro)
+- Linkedin: [Tadeu Sarro](https://www.linkedin.com/in/tadeuasarro/)
+
+
+## 🤝 Contributing
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+
+## Show your support
+Give a ⭐️ if you like this project!
+
+
+## Acknowledgments
+- Microverse
+- Odin Project
+
+
+## 📝 License
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
