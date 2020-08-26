@@ -82,6 +82,19 @@ describe Game do
       board = Board['X', 2, 3, 4, 'X', 6, 7, 8, 'X']
       expect(game.check_victory('X', board)).to eql(true)
     end
+    #random checking
+    it "Check if some random cells marked create a winning condition" do
+      board = Board['X', 'X', 3, 4, 'X', 'X', 'X', 8, 9]
+      expect(game.check_victory('X', board)).to eql(false)
+    end
+    it "Check if some random cells marked create a winning condition" do
+      board = Board['X', 2, 3, 4, 'X', 6, 'X', 8, 9]
+      expect(game.check_victory('X', board)).to eql(false)
+    end
+    it "Check if some random cells marked create a winning condition" do
+      board = Board[1, 2, 'X', 4, 'X', 6, 7, 8, 'X']
+      expect(game.check_victory('X', board)).to eql(false)
+    end
   end
 
 end
