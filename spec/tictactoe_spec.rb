@@ -60,6 +60,28 @@ describe Game do
       board = Board[1, 2, 3, 4, 5, 6, 'X', 'X', 'X']
       expect(game.check_victory('X', board)).to eql(true)
     end
+    #vertical
+    it "Checks if the first column has a winning condition" do
+      board = Board['X', 2, 3, 'X', 5, 6, 'X', 8, 9]
+      expect(game.check_victory('X', board)).to eql(true)
+    end
+    it "Checks if the second column has a winning condition" do
+      board = Board[1, 'X', 3, 4, 'X', 6, 7, 'X', 9]
+      expect(game.check_victory('X', board)).to eql(true)
+    end
+    it "Checks if the third column has a winning condition" do
+      board = Board[1, 2, 'X', 4, 5, 'X', 7, 8, 'X']
+      expect(game.check_victory('X', board)).to eql(true)
+    end
+    #diagonal
+    it "Checks if the ascending diagonal has a winning condition" do
+      board = Board[1, 2, 'X', 4, 'X', 6, 'X', 8, 9]
+      expect(game.check_victory('X', board)).to eql(true)
+    end
+    it "Checks if the descending diagonal has a winning condition" do
+      board = Board['X', 2, 3, 4, 'X', 6, 7, 8, 'X']
+      expect(game.check_victory('X', board)).to eql(true)
+    end
   end
 
 end
