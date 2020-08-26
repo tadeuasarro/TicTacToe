@@ -127,7 +127,6 @@ describe Game do
       expect(game.check_win_move('0', board)).to eql(false)
       expect(game.check_win_move('X', board2)).to eql(false)
       expect(game.check_win_move('0', board2)).to eql(false)
-
     end
   end
 end
