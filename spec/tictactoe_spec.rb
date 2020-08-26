@@ -122,12 +122,12 @@ describe Game do
   describe '#check_draw' do
     it 'Checks if its a draw' do
       board = Board['X', '0', 'X', 'X', '0', 'X', '0', 'X', '0']
-      board2= Board['0' , 'X', '0', 'X', '0', 'X', 'X', '0', 'X']
+      board2 = Board['0', 'X', '0', 'X', '0', 'X', 'X', '0', 'X']
       expect(game.check_win_move('X', board)).to eql(false)
       expect(game.check_win_move('0', board)).to eql(false)
       expect(game.check_win_move('X', board2)).to eql(false)
       expect(game.check_win_move('0', board2)).to eql(false)
 
-    end 
+    end
   end
 end
