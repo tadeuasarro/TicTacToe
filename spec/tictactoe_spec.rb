@@ -44,4 +44,20 @@ describe Game do
   it "Checks if the selected cell ('X') is contained in the board" do
     expect(game.check_position('X', board)).to eql(false)
   end
+
+  describe '#check_victory' do
+    #horizontal
+    it "Checks if the first row has a winning condition" do
+      board = Board['X', 'X', 'X', 4, 5, 6, 7, 8, 9]
+      expect(game.check_victory('X', board)).to eql(true)
+    end
+    it "Checks if the second row has a winning condition" do
+      board = Board[1, 2, 3, 'X', 'X', 'X', 7, 8, 9]
+      expect(game.check_victory('X', board)).to eql(true)
+    end
+    it "Checks if the third row has a winning condition" do
+      board = Board[1, 2, 3, 4, 5, 6, 'X', 'X', 'X']
+      expect(game.check_victory('X', board)).to eql(true)
+    end
+  end
 end
