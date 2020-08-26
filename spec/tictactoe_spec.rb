@@ -97,4 +97,27 @@ describe Game do
     end
   end
 
+  describe '#check_win_move' do
+    it "Checks if the player has a chance to win within the next move" do
+      board = Board['X', 'X', 3, 4, 5, 6, 7, 8, 9]
+      expect(game.check_win_move('X', board)).to eql(true)
+    end
+    it "Checks if the player has a chance to win within the next move" do
+      board = Board[1, 'X', 3, 4, 'X', 6, 7, 8, 9]
+      expect(game.check_win_move('X', board)).to eql(true)
+    end
+    it "Checks if the player has a chance to win within the next move" do
+      board = Board['X', 'X', '0', 4, 5, 6, 7, 8, 9]
+      expect(game.check_win_move('X', board)).to eql(false)
+    end
+    it "Checks if the player has a chance to win within the next move" do
+      board = Board['X', 2, 3, 4, 'X', 6, 7, 8, 9]
+      expect(game.check_win_move('X', board)).to eql(true)
+    end
+    it "Checks if the player has a chance to win within the next move" do
+      board = Board['X', 2, 3, 4, 'X', 6, 7, 8, '0']
+      expect(game.check_win_move('X', board)).to eql(false)
+    end
+  end
+
 end
