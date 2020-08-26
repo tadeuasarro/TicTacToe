@@ -74,6 +74,13 @@ If nobody wins the game will let you know and ask you if you want to start a new
 
 ![screenshot](./img/draw.png)
 
+### Rspec Test
+You need to install it with `gem install rspec` to run the next test
+
+![screenshot](./img/rspec_test.png)
+
+To run the test type `rspec --format documentation` in your terminal after instal rspec
+
 
 ## Authors
 👤 **Mateo Mojica**
