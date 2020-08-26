@@ -31,18 +31,19 @@ describe Game do
   game = Game.new(player1, player2, board)
 
   describe '#check_position' do
-  it "Checks if the selected cell from 1 to 9 is contained in the board" do
-    for i in (1..9) do
-      expect(game.check_position(i, board)).to eql(true)
+    it "Checks if the selected cell from 1 to 9 is contained in the board" do
+      for i in (1..9) do
+        expect(game.check_position(i, board)).to eql(true)
+      end
     end
-  end
 
-  it "Checks if the selected cell (10) is contained in the board" do
-    expect(game.check_position(10, board)).to eql(false)
-  end
+    it "Checks if the selected cell (10) is contained in the board" do
+      expect(game.check_position(10, board)).to eql(false)
+    end
 
-  it "Checks if the selected cell ('X') is contained in the board" do
-    expect(game.check_position('X', board)).to eql(false)
+    it "Checks if the selected cell ('X') is contained in the board" do
+      expect(game.check_position('X', board)).to eql(false)
+    end
   end
 
   describe '#check_victory' do
@@ -60,4 +61,5 @@ describe Game do
       expect(game.check_victory('X', board)).to eql(true)
     end
   end
+
 end
