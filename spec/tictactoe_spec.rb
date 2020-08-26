@@ -22,3 +22,12 @@ describe Board do
 
   end
 end
+
+# GAME CLASS
+describe Game do
+  player1 = Player.new('First', 'X')
+  player2 = Player.new('Second', '0')
+  board = Board[1, 2, 3, 4, 5, 6, 7, 8, 9]
+  game = Game.new(player1, player2, board)
+  
+end
