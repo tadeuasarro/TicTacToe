@@ -87,7 +87,7 @@ To run the test type `rspec --format documentation` in your terminal after insta
 👤 **José Pedraza**
 - Github: [@pastorp3](https://github.com/pastorp3)
 - Twitter: [@jose_pastor](https://twitter.com/jose_pastorp3 )
-- Linkedin: [linkedin](https://www.linkedin.com/in/jos%C3%A9-pedraza-acevedo-ab700a1a9/)Mateo Mojica](https://linkedin.com/mateo_mojica_hernandez)
+- Linkedin: [linkedin](https://www.linkedin.com/in/jos%C3%A9-pedraza-acevedo-ab700a1a9/)
 
 
 👤 **Tadeu Sarro**
